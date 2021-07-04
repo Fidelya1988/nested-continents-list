@@ -30,7 +30,7 @@ function App() {
       {console.log("render")}
       {!loading ? (
         <ul className={styles.list}>
-          {/* <ListItem items={data.continents} /> */}
+          <ListItem items={data.continents} />
           {data.continents.map(({ name, code, countries }) => (
             <li
               key={code}
