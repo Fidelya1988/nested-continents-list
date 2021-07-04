@@ -9,29 +9,41 @@ function App() {
   const [selectedContinent, setSelectedContinent] = useState(null);
   const [selectedCountry, setSelectedCountry] = useState(null);
 
-  const handleContinentSelect = (code) => {
-    if (selectedContinent === code) {
-      setSelectedContinent(null);
-    } else {
-      setSelectedContinent(code);
-    }
-  };
+  // const handleContinentSelect = (code) => {
+  //   if (selectedContinent === code) {
+  //     setSelectedContinent(null);
+  //   } else {
+  //     setSelectedContinent(code);
+  //   }
+  // };
 
-  const handleCountrySelect = (code) => {
-    if (selectedCountry === code) {
-      setSelectedCountry(null);
-    } else {
-      setSelectedCountry(code);
-    }
-  };
-
+  // const handleCountrySelect = (code) => {
+  //   if (selectedCountry === code) {
+  //     setSelectedCountry(null);
+  //   } else {
+  //     setSelectedCountry(code);
+  //   }
+  // };
+const handleSelect = (code)=> {
+  if (selectedContinent === code) {
+    setSelectedContinent(null);
+  } else {
+    setSelectedContinent(code);
+  }
+  if (selectedCountry === code) {
+    setSelectedCountry(null);
+  } else {
+    setSelectedCountry(code);
+  }
+ 
+}
   return (
     <div>
       {console.log("render")}
       {!loading ? (
         <ul className={styles.list}>
-          <ListItem items={data.continents} />
-          {data.continents.map(({ name, code, countries }) => (
+          <ListItem items={data.continents} selectedItems ={selectedContinent, selectedCountry} handleSelect={handleSelect}/>
+          {/* {data.continents.map(({ name, code, countries }) => (
             <li
               key={code}
               className={selectedContinent === code ? styles.selected : ""}
@@ -57,7 +69,7 @@ function App() {
                 </ul>
               )}
             </li>
-          ))}
+          ))} */}
         </ul>
       ) : (
         <Loader />
