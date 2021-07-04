@@ -7,15 +7,22 @@ const getChildArray = (obj) => {
 };
 
 function ListItem({ items, selectedItem, handleSelect }) {
-
+  console.log(selectedItem);
   return (
-    
     <>
-
       {items.map((item) => (
         <li key={item.code}>
-          <p onClick={()=>handleSelect(item.code)}>{item.name}</p>
-         {getChildArray(item) && <ul> <ListItem items={getChildArray(item)} handleSelect={handleSelect} selectedItem={selectedItem}/></ul>}  
+          <p onClick={() => handleSelect(item.code)}>{item.name}</p>
+          {getChildArray(item) && (
+            <ul>
+              {" "}
+              <ListItem
+                items={getChildArray(item)}
+                handleSelect={getChildArray(item) && handleSelect}
+                selectedItem={getChildArray(item) && selectedItem}
+              />
+            </ul>
+          )}
         </li>
       ))}
     </>

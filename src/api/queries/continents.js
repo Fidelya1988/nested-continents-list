@@ -8,6 +8,9 @@ export const GET_CONTINENTS =  gql`
               countries {
                   name
                   code
+                  continent {
+                      code
+                  }
                   languages {
                       name
                       code
