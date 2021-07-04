@@ -6,6 +6,11 @@ const getChildArray = (obj) => {
   }
 };
 
+const getSelectedItem =(code, items) => {
+for(const key in items) {
+  if (items[key]===code) return items[key]
+}
+}
 function ListItem({ items, selectedItem, handleSelect }) {
   console.log(selectedItem);
   return (
@@ -13,7 +18,7 @@ function ListItem({ items, selectedItem, handleSelect }) {
       {items.map((item) => (
         <li key={item.code}>
           <p onClick={() => handleSelect(item.code)}>{item.name}</p>
-          {getChildArray(item) && (
+          {getSelectedItem(item.code, selectedItem) && (
             <ul>
               {" "}
               <ListItem
