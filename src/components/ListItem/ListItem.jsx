@@ -12,7 +12,7 @@ for(const key in items) {
 }
 }
 function ListItem({ items, selectedItem, handleSelect }) {
-  console.log(selectedItem);
+
   return (
     <>
       {items.map((item) => (

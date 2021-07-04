@@ -32,7 +32,7 @@ function App() {
   };
   return (
     <div>
-      {console.log("render")}
+ 
       {!loading ? (
         <ul className={styles.list}>
           <ListItem
