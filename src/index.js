@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "./api/client/client";
-import { getChildArray } from "./helpers/getChildArray";
+import { getChildArray } from './helpers/getChildArray'
 import { getSelectedItem } from "./helpers/getSelectedItem";
 import { getItemCode } from "./helpers/getItemCode";
 export const HelpersContext = React.createContext();
