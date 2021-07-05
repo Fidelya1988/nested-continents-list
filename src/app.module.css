@@ -6,7 +6,7 @@
 .list p {
   padding: 10px 25px;
   margin: 10px;
-  border-radius: 12px;
+  border-radius: 6px;
   border: 1px solid #ccc;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
@@ -22,11 +22,3 @@
   border: 1px solid #ccc;
   border-radius: 6px;
 }
-
-/*.list ul li::marker {*/
-/*    content: url("./img/mark.png");*/
-/*}*/
-
-/*.list ul li:last-child::marker {*/
-/*    content: url("./img/last_mark.png");*/
-/*}*/

@@ -1,8 +1,8 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { HelpersContext } from "../..";
 
 function ListItem({ items, selectedItem, handleSelect }) {
-const {getChildArray, getSelectedItem } = useContext(HelpersContext)
+  const { getChildArray, getSelectedItem } = useContext(HelpersContext);
 
   return (
     <>

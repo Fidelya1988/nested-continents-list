@@ -10,13 +10,7 @@ function App() {
   const [selectedContinent, setSelectedContinent] = useState(null);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const { getItemCode } = useContext(HelpersContext);
-  // const getContinentCode = (code) => {
-  //   const codes = data.continents.map((continent) => continent.code);
 
-  //   const [continentCode] = codes.filter((c) => c === code);
-
-  //   return continentCode;
-  // };
   const handleSelect = (code) => {
     const continentCode = getItemCode(code, data.continents);
     console.log(continentCode);
