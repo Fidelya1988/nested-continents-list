@@ -6,14 +6,14 @@ import Loader from "./components/Loader/Loader";
 import ListItem from "./components/ListItem/ListItem";
 import { HelpersContext } from ".";
 function App() {
-  const { data, loading, error } = useQuery(GET_CONTINENTS);
+  const { data, loading } = useQuery(GET_CONTINENTS);
   const [selectedContinent, setSelectedContinent] = useState(null);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const { getItemCode } = useContext(HelpersContext);
 
   const handleSelect = (code) => {
     const continentCode = getItemCode(code, data.continents);
-    console.log(continentCode);
+
     if (selectedContinent === code) {
       setSelectedContinent(null);
     } else if (code === continentCode) {
