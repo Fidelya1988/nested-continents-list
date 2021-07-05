@@ -31,7 +31,6 @@ function App() {
         <ul className={styles.list}>
           <ListItem
             items={data.continents}
-            countryContinent={data.continents.countries}
             selectedItem={{ selectedContinent, selectedCountry }}
             handleSelect={handleSelect}
           />
