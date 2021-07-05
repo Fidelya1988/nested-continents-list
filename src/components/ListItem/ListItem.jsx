@@ -1,18 +1,19 @@
-import React from "react";
+import React, {useContext} from "react";
+import { HelpersContext } from "../..";
 
-const getChildArray = (obj) => {
-  for (const key in obj) {
-    if (obj[key] instanceof Array) return obj[key];
-  }
-};
+// const getChildArray = (obj) => {
+//   for (const key in obj) {
+//     if (obj[key] instanceof Array) return obj[key];
+//   }
+// };
 
-const getSelectedItem =(code, items) => {
-for(const key in items) {
-  if (items[key]===code) return items[key]
-}
-}
+// const getSelectedItem =(code, items) => {
+// for(const key in items) {
+//   if (items[key]===code) return items[key]
+// }
+// }
 function ListItem({ items, selectedItem, handleSelect }) {
-
+const {getChildArray, getSelectedItem } = useContext(HelpersContext)
   return (
     <>
       {items.map((item) => (
