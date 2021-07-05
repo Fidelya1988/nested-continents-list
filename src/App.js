@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_CONTINENTS } from "./api/queries/continents";
 import styles from "./app.module.css";
 import Loader from "./components/Loader/Loader";
 import ListItem from "./components/ListItem/ListItem";
+import { HelpersContext } from ".";
 function App() {
   const { data, loading, error } = useQuery(GET_CONTINENTS);
   const [selectedContinent, setSelectedContinent] = useState(null);
   const [selectedCountry, setSelectedCountry] = useState(null);
+  const { getItemCode } = useContext(HelpersContext);
+  // const getContinentCode = (code) => {
+  //   const codes = data.continents.map((continent) => continent.code);
 
-  const getContinentCode = (code) => {
-    const codes = data.continents.map((continent) => continent.code);
+  //   const [continentCode] = codes.filter((c) => c === code);
 
-    const [continentCode] = codes.filter((c) => c === code);
-
-    return continentCode;
-  };
+  //   return continentCode;
+  // };
   const handleSelect = (code) => {
-    const continentCode = getContinentCode(code);
+    const continentCode = getItemCode(code, data.continents);
     console.log(continentCode);
     if (selectedContinent === code) {
       setSelectedContinent(null);
@@ -32,7 +33,6 @@ function App() {
   };
   return (
     <div>
- 
       {!loading ? (
         <ul className={styles.list}>
           <ListItem
